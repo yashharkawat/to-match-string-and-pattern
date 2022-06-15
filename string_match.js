@@ -12,7 +12,7 @@ const fun=(string)=>{
         str+=string[i];
     }
     let k=-1;
-    const arr=[];
+    let arr=[];
     for(let i=1;i<str.length-1;i++)
     {
         if(str[i]==='{'&&str[i-1]==='{') k=i-1;
@@ -29,7 +29,7 @@ const fun=(string)=>{
     return [str,arr];
 }
 //returns all string which has the same pattern as the corresponding string. 
-const match=(arrayOfStrings,string)=>{
+const matches=(mapOfStrings,string)=>{
     let [str,arr]=fun(string);
     let newStr="";
     let k=0;
@@ -44,17 +44,17 @@ const match=(arrayOfStrings,string)=>{
     let regEx=new RegExp(`${newStr}`);
     let array=[];
 
-    for(let key in arrayOfStrings)
+    for(let key in mapOfStrings)
     {
         if(regEx.test(key)) array.push(key);
     }
     return array;
 }
-// let string="My name is {{name}} ";
+// let string="My name is {{name}}";
 // let array={
 //     'My name is Raghav ': [],
 //     'My name is Yash': [],
 //     'My name is Parth': [],
 //     'My name is Parth. I am 18 years old': []
 // };
-// console.log(match(array,string));
+// console.log(matches(array,string));
