@@ -29,7 +29,7 @@ const fun=(string)=>{
     return [str,arr];
 }
 //returns all string which has the same pattern as the corresponding string. 
-const matches=(mapOfStrings,string)=>{
+const patternMatch=(mapOfStrings,string)=>{
     let [str,arr]=fun(string);
     let newStr="";
     let k=0;
@@ -50,11 +50,11 @@ const matches=(mapOfStrings,string)=>{
     }
     return array;
 }
-// let string="My name is {{name}}";
+// let string="My name is {{name}} ";
 // let array={
 //     'My name is Raghav ': [],
 //     'My name is Yash': [],
 //     'My name is Parth': [],
 //     'My name is Parth. I am 18 years old': []
 // };
-// console.log(matches(array,string));
+// console.log(patternMatch(array,string));
